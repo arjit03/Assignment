@@ -7,7 +7,9 @@ This is a React-based web application built using **Vite**.
 
 👉 [Live Demo](https://varnanfilms.netlify.app)
 
+### ⚠️ Note for EZ Works Evaluation Team
 
+The provided Figma did not include responsive layouts, so this version is optimized for desktop only.
 
 ---
 
