@@ -8,41 +8,29 @@ export default function Contact() {
     const [sending, setSending] = useState(false)
     const [errors, setErrors] = useState({})
 
-    // stronger but simple email check:
-    // - no spaces
-    // - no consecutive dots
-    // - local part and domain allowed chars
-    // - TLD 2-24 letters
     const simpleEmail = email => {
         if (!email) return false
         const s = String(email).trim()
 
-        // regex: no consecutive dots, capture local, domain (without final tld), and tld
         const re = /^(?!.*\.\.)([A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*)@([A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*)\.([A-Za-z]{2,24})$/
         const m = s.match(re)
         if (!m) return false
 
-        const domainPart = m[2].toLowerCase() // may include subdomains
+        const domainPart = m[2].toLowerCase()
         const tld = m[3].toLowerCase()
 
-        // keep a TLD whitelist (expand if you want to accept more)
         const allowedTlds = new Set([
             'com', 'net', 'org', 'in', 'co', 'io', 'ai', 'edu', 'gov', 'biz', 'info', 'me', 'app', 'dev', 'tech',
             'online', 'site', 'store', 'shop', 'xyz', 'club', 'pro', 'agency', 'cloud', 'solutions', 'ltd',
             'ac', 'uk', 'us', 'ca', 'au', 'de', 'fr', 'jp', 'ru', 'br', 'za', 'nl', 'se', 'no', 'es', 'it', 'ch'
         ])
         if (!allowedTlds.has(tld)) return false
-
-        // take the last label of the domain (the main provider or domain name)
         const domainMain = domainPart.split('.').pop().toLowerCase()
 
-        // common providers to protect against typos (expand as needed)
         const providers = ['gmail', 'googlemail', 'yahoo', 'hotmail', 'outlook', 'rediff', 'protonmail', 'icloud', 'aol', 'live', 'gmx', 'zoho']
 
-        // if domain is exactly a known provider, accept
         if (providers.includes(domainMain)) return true
 
-        // quick Levenshtein (edit distance) - small and fast
         function editDistance(a, b) {
             const la = a.length, lb = b.length
             if (!la) return lb
@@ -54,32 +42,26 @@ export default function Contact() {
                 for (let i = 1; i <= la; i++) {
                     const cur = dp[i]
                     const cost = a[i - 1] === b[j - 1] ? 0 : 1
-                    dp[i] = Math.min(
-                        dp[i] + 1,        // deletion
-                        dp[i - 1] + 1,    // insertion
-                        prev + cost       // substitution
-                    )
+                    dp[i] = Math.min(dp[i] + 1, dp[i - 1] + 1, prev + cost)
                     prev = cur
                 }
             }
             return dp[la]
         }
 
-        // if domainMain is *very* close to a popular provider (likely a typo), reject
         for (const p of providers) {
             if (editDistance(domainMain, p) <= 1) {
-                return false // e.g. 'gmaill' -> close to 'gmail', reject
+                return false
             }
         }
 
-        // otherwise accept (valid format, allowed tld, not a provider-typo)
         return true
     }
 
     function handleChange(e) {
         const { name, value } = e.target
         setForm({ ...form, [name]: value })
-        setErrors({ ...errors, [name]: '' }) // clear error when user types
+        setErrors({ ...errors, [name]: '' })
     }
 
     function handleSubmit(e) {
@@ -102,7 +84,8 @@ export default function Contact() {
         })
             .then(res => {
                 if (res.ok) {
-                    setForm(prev => ({ ...prev, message: 'Form Submitted' }))
+
+                    setForm({ name: '', email: '', phone: '', message: 'Form Submitted' })
                     setErrors({})
                 } else {
                     setErrors({ server: 'Server error' })
@@ -138,6 +121,7 @@ export default function Contact() {
                             name='name'
                             value={form.name}
                             onChange={handleChange}
+                            disabled={sending}
                             className={`inp1 ${errors.name ? 'invalid' : ''}`}
                             placeholder='Your name*'
                         />
@@ -149,6 +133,7 @@ export default function Contact() {
                             name='email'
                             value={form.email}
                             onChange={handleChange}
+                            disabled={sending}
                             className={`inp2 ${errors.email ? 'invalid' : ''}`}
                             placeholder='Your email*'
                         />
@@ -159,6 +144,7 @@ export default function Contact() {
                             name='phone'
                             value={form.phone}
                             onChange={handleChange}
+                            disabled={sending}
                             className='inp3'
                             placeholder='Phone'
                         />
@@ -170,6 +156,7 @@ export default function Contact() {
                             name='message'
                             value={form.message}
                             onChange={handleChange}
+                            disabled={sending}
                             className={`inp4 ${errors.message ? 'invalid' : ''}`}
                             placeholder='Your message*'
                         />

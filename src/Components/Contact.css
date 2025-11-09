@@ -125,38 +125,16 @@
 .inp4 {
 
     height: 43px;
-    /* same initial height */
+
     min-height: 120px;
-    /* but allows multi-line typing */
+
     resize: none;
-    /* stops resize handle */
+
     overflow: auto;
 
 }
 
-.sub {
-    text-align: center;
-    margin-bottom: 60px;
-    width: 93px;
-    height: 46px;
-    background-color: rgba(241, 93, 43, 1);
-    border: none;
-    color: white;
 
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    border-radius: 24px;
-    font-family: Instrument Sans;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 18px;
-
-    line-height: 100%;
-    letter-spacing: 0%;
-
-}
 
 .links {
     font-family: Halant;
@@ -196,4 +174,33 @@ img {
 
 .invalid {
     border-color: red;
+}
+
+.sub {
+    text-align: center;
+    margin-bottom: 60px;
+    width: 120px;
+    /* slightly wider base width */
+    height: 46px;
+    background-color: rgba(241, 93, 43, 1);
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 24px;
+    font-family: Instrument Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    transition: width 0.3s ease;
+
+}
+
+
+.sub:disabled {
+    width: 150px;
+
+    opacity: 0.8;
+    cursor: not-allowed;
 }
