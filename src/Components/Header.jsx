@@ -1,5 +1,5 @@
 import React from 'react'
-// import { NavLink } from 'react-router'
+
 import { NavLink, useLocation } from 'react-router';
 
 import './Header.css'
@@ -14,21 +14,12 @@ export default function Header() {
     function navToggler() {
         setNavOpened(!navOpened);
     }
+    function handleMouseLeave() {
+        setNavOpened(false)
+    }
 
-    // function navPopUp() {
-    //     setNavOpened(!navOpened);
-    //     return (
-    //         <div className='navOpen'>
-    //             <NavLink>Services</NavLink>
-    //             <NavLink>Their Stories</NavLink>
-    //             <NavLink>Our Story</NavLink>
-    //             <NavLink>Varnan</NavLink>
-    //             <NavLink>Let's Talk</NavLink>
-    //         </div>
-    //     )
-    // }
     return (
-        <div className='navbar'>
+        <div className='navbar' onMouseLeave={handleMouseLeave}>
             <NavLink to='/'>
                 <div className='logo-container'>
                     <img src="/logo.png" className={location.pathname !== '/' ? 'logo-nav' : 'logo-nav-off'} alt="" />

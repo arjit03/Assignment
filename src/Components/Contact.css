@@ -16,13 +16,8 @@
     font-style: Regular;
     font-size: 24px;
     align-self: flex-end;
-    /* line-height: 100%;
-    letter-spacing: 0%; */
     color: rgba(0, 0, 0, 1);
-
     transform: translate(150px, 260px);
-
-
 }
 
 .footer-left {
@@ -37,7 +32,6 @@
     display: flex;
     flex-direction: column;
     transform: translate(-140px, -410px);
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -49,8 +43,6 @@
 
 .top-right {
     transform: translate(222px, -80px);
-    /* overflow-y: hidden; */
-    /* overflow: inherit; */
     pointer-events: none;
     position: relative !important;
     z-index: 0 !important;
@@ -113,7 +105,6 @@
 .inp1,
 .inp2,
 .inp3 {
-    /* height: 43px; */
     padding-top: 10.5px;
     padding-right: 11.5px;
     padding-bottom: 10.5px;
@@ -141,7 +132,6 @@
     font-weight: 700;
     font-style: Bold;
     font-size: 17px;
-    /* leading-trim: NONE; */
     line-height: 17px;
     letter-spacing: 0%;
     color: rgba(241, 93, 43, 1);
@@ -156,7 +146,7 @@ img {
     z-index: 0;
 }
 
-/* FORCE header/nav to be on top of decorative art */
+
 
 .navbar {
     position: relative !important;
@@ -167,7 +157,7 @@ img {
     color: red;
     font-size: 14px;
     margin-bottom: 5px;
-    /* space before the input */
+
     text-align: left;
     width: 700px;
 }
@@ -180,7 +170,6 @@ img {
     text-align: center;
     margin-bottom: 60px;
     width: 120px;
-    /* slightly wider base width */
     height: 46px;
     background-color: rgba(241, 93, 43, 1);
     border: none;
@@ -194,6 +183,8 @@ img {
     line-height: 100%;
     letter-spacing: 0%;
     transition: width 0.3s ease;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+
 
 }
 

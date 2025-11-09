@@ -40,7 +40,6 @@
 
 .in_between_middle {
     display: flex;
-    /* gap: 48px; */
     max-width: 1250px;
 }
 

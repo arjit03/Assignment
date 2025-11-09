@@ -2,7 +2,6 @@
     display: flex;
     width: 100%;
     gap: 24px;
-
 }
 
 .text {
@@ -11,25 +10,15 @@
 
 .image-wrapper {
     display: flex;
-    /* gap: -10px; */
-    /* width: 235.000008441183px;
-    height: 233.00000836934316px; */
-    /* justify-content: center; */
-
-
 }
 
 .rightHeading {
     font-family: Island Moments;
     font-weight: 400;
-    font-style: Regular;
     font-size: 80px;
     color: rgba(15, 50, 85, 1);
     max-width: 918px;
-    /* line-height: 100%;
-    letter-spacing: 0%; */
     text-align: center;
-
 }
 
 .right-cont {
@@ -44,7 +33,6 @@
 }
 
 .left-cont {
-    /* padding-left: 70px; */
     margin-left: 70px;
     display: flex;
     flex-direction: column;
@@ -58,28 +46,19 @@
 .heading1 {
     font-family: Halant;
     font-weight: 400;
-    font-style: Regular;
     font-size: 40px;
     text-align: center;
     max-width: 662px;
-    max-height: 63px;
 }
 
 .heading2 {
     font-family: Instrument Sans;
     font-weight: 400;
-    font-style: Regular;
     font-size: 24px;
     text-align: center;
     max-width: 550px;
-    max-height: 145px;
 }
 
-/* .main-cont {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
 .logos {
     position: relative;
     margin-left: 60px;
@@ -87,7 +66,91 @@
 
 .obj {
     position: absolute;
-    /* bottom: 200px; */
     left: 170px;
     top: 125px;
+    z-index: 1;
+}
+
+
+.circle {
+    position: relative;
+    top: 20px;
+    cursor: pointer;
+    z-index: 2;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+
+.circle.animate {
+    animation: smoothSingleShrink 5s cubic-bezier(.22, .9, .32, 1) forwards;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
+    will-change: transform, opacity;
+}
+
+
+@keyframes smoothSingleShrink {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(0.7);
+
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .main-cont {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-cont {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .right-cont {
+        padding: 20px;
+    }
+
+    .rightHeading {
+        font-size: 60px;
+        max-width: 600px;
+    }
+
+    .heading1 {
+        font-size: 32px;
+        max-width: 500px;
+    }
+
+    .heading2 {
+        font-size: 20px;
+        max-width: 450px;
+    }
+
+    .logos {
+        margin: 0 auto;
+    }
+
+    .obj {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 80px;
+    }
+
+    .circle {
+        top: 200px;
+    }
 }

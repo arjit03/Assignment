@@ -1,7 +1,3 @@
-/* .group-9 {
-    max-width: 620.25px;
-    max-height: 565.64px;
-} */
 .group-container {
     width: 50%;
     display: flex;
@@ -13,8 +9,8 @@
 
 .img-container {
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
+
+    height: 950px;
 }
 
 .group-9 {
@@ -45,23 +41,22 @@
 
 .tag1 {
     position: relative;
-    /* top: 180px; */
+
     font-family: Island Moments;
     font-weight: 400;
     font-style: Regular;
     font-size: 42px;
     bottom: 120px;
     color: rgba(16, 50, 85, 1)
-        /* background-image: url('/Vector.svg'); */
 }
 
 .btm_vector {
     max-height: 200px;
     display: flex;
     gap: 25px;
-    /* justify-content: flex-start; */
+
     flex-direction: column;
-    /* flex-wrap: nowrap; */
+
 }
 
 .vct_btm {
@@ -86,9 +81,9 @@
 .vec2 {
     width: 151.5px;
     height: 95.75px;
-    /* align-self: center; */
+
     position: relative;
-    /* right: 100px; */
+
     left: 80px;
 
 }
@@ -100,7 +95,7 @@
     font-size: 42px;
     color: rgba(16, 50, 85, 1);
     position: relative;
-    /* left: px; */
+
     right: 15px;
 
 }
@@ -151,8 +146,7 @@
 }
 
 .portfolio {
-    /* width: 136;
-height: 44px; */
+
     margin-top: 20px;
     text-align: center;
     text-decoration: none;

@@ -12,13 +12,10 @@ function Services() {
     const [hover1, setHover1] = React.useState(false);
     const [hover2, setHover2] = React.useState(false);
     const [hover3, setHover3] = React.useState(false);
-    // function updater() {
-    //     setHover(!hover);
-    // }
-    // console.log(hover);
+
     return (
         <>
-            {/* {(hover && <FilmProduction />)} */}
+
             <div className={`film-overlay ${hover1 ? 'visible' : ''}`}>
                 {hover1 && <FilmProduction />}
             </div>
@@ -40,7 +37,7 @@ function Services() {
                         onMouseLeave={() => setHover1(false)}>
                         <img src="/pin1.png" alt="" className='pin1' />
                         <img src="/pic1.png" alt="" className='pic1'
-                        //  onMouseEnter={updater} onMouseLeave={updater} 
+
                         />
 
                     </div>

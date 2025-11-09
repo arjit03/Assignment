@@ -11,9 +11,9 @@ function Portfolio() {
                 <div className='heading2'>Watch the magic we've captured</div>
                 <div className='filmContainer'>
 
+                    <img src="Group 11.png" alt="" />
                     <img src="Rectangle 45.png" alt="" className='navLeft' />
                     <img src="Vector 10.png" className='vec10' alt="" />
-                    <img src="Group 11.png" alt="" />
                     <img src="Rectangle 44.png" alt="" className='navRight' />
                     <img src="Vector 9.png" alt="" className='vec9' />
                 </div>
