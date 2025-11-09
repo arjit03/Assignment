@@ -1,0 +1,244 @@
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 565px;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    margin-top: 100px;
+}
+
+/* .logo {
+    width: 388px;
+    height: 150px;
+    position: relative;
+    padding: 200px;
+    opacity: 1;
+
+} */
+.image-container {
+    position: relative;
+    max-width: 565px;
+    height: 565px;
+    padding-bottom: 50px;
+
+    /* move the whole left image group up */
+    top: -80px;
+}
+
+
+/* .Hero-Mandala {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    padding: 40px 115px 0px 180px;
+} */
+
+.logo {
+    position: absolute;
+    top: 52.5%;
+    left: 82%;
+    transform: translate(-75%, -60%);
+    opacity: 1;
+    width: 388px;
+    height: 150px;
+}
+
+.Hero-Mandala {
+    max-width: 565px;
+    height: 565px;
+    padding: 40px 115px 0px 180px;
+    opacity: 1;
+    object-fit: contain;
+    position: relative;
+    transform: translate(-100px, -10px);
+}
+
+.inner-text-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    padding-right: 200px;
+}
+
+.heading {
+    width: 825px;
+    height: 230px;
+    font-family: Island Moments;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 100px;
+    /* line-height: 100%; */
+    letter-spacing: 0%;
+    text-align: center;
+    opacity: 1;
+    /* color: rgba(37, 39, 41, 1); */
+    color: rgba(15, 50, 85, 1);
+
+
+}
+
+
+
+.tagline {
+    width: 322px;
+    height: 63px;
+    opacity: 1;
+    font-family: Halant;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 40px;
+    color: rgba(241, 93, 43, 1);
+    /* line-height: 100%; */
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.discription {
+    width: 487px;
+    height: 154px;
+    font-family: Instrument Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    margin-top: 30px;
+    /* line-height: 100%; */
+    letter-spacing: 0%;
+    text-align: center;
+    color: rgba(37, 39, 41, 1);
+
+    opacity: 1;
+
+}
+
+@media (max-width: 1750px) {
+
+    /* .main-container {
+        flex-direction: column;
+    } */
+    .heading {
+        width: 500px;
+        margin-right: 60px;
+        padding-bottom: 60px;
+        padding-left: 40px;
+    }
+
+}
+
+@media (max-width: 1550px) {
+
+    /* .main-container {
+        flex-direction: column;
+    } */
+    .heading {
+        padding-top: 16px;
+        font-size: 80px;
+        width: 400px;
+        margin-right: 60px;
+
+
+    }
+
+    .discription {
+        width: 400px;
+        padding-bottom: 180px;
+    }
+
+    .tagline {
+        padding-bottom: 40px;
+        width: 250px;
+
+    }
+
+
+}
+
+/* @media(max-width: 1450px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .Hero-Mandala {
+        padding: 0px;
+    }
+} */
+
+/* fix side-scroll and make layout fluid on small screens */
+@media (max-width: 1450px) {
+
+    html,
+    body {
+        box-sizing: border-box;
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+        padding: 40px 16px;
+
+    }
+
+    .image-container,
+    .Hero-Mandala {
+        max-width: 100%;
+
+        width: 320px;
+
+        height: auto;
+        padding: 0;
+
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 60%;
+
+        width: auto;
+        height: auto;
+    }
+
+    .inner-text-container {
+        padding: 20px 16px;
+
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .heading,
+    .tagline,
+    .discription {
+        width: 100%;
+        max-width: 720px;
+
+        padding: 0 8px;
+
+        margin: 0 auto;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+
+    body,
+    .main-container {
+        overflow-x: hidden;
+    }
+}
+
+@media(max-width: 430px) {
+    .tagline {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+}

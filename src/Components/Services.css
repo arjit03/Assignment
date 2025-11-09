@@ -1,0 +1,116 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+.main-heading {
+    font-family: Halant;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 40px;
+    margin-top: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: rgba(37, 39, 41, 1);
+
+
+}
+
+.vec5 {
+    margin-top: 0px;
+    position: relative;
+    bottom: 5px;
+}
+
+.image-container {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.foot {
+    margin-top: 50px;
+}
+
+.pic1-cont,
+.pic2-cont,
+.pic3-cont {
+    position: relative;
+}
+
+.pin1,
+.pin2,
+.pin3 {
+    position: absolute;
+
+    z-index: 2;
+
+}
+
+.pic2 {
+    transform: translateY(65px);
+}
+
+.pic1 {
+    transform: translate(40px, -3px);
+    overflow: visible;
+}
+
+.pic3 {
+    transform: translate(-40px, -3px);
+}
+
+/* .pic2-cont {
+    position: relative;
+}
+
+.pin2 {
+    position: absolute;
+}
+
+.pic3-cont {
+    position: relative;
+}
+
+.pin3 {
+    position: absolute;
+} */
+.pin1 {
+    transform: translate(70px, -15px);
+
+}
+
+.pin2 {
+    transform: translate(133px, 35px);
+}
+
+.pin3 {
+    transform: translate(270px, -15px);
+}
+
+.container.off {
+    opacity: 0;
+}
+
+.film-overlay {
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0; */
+    z-index: 50;
+    pointer-events: none;
+    /* CRITICAL: lets the mouse stay on .pic1-cont */
+    margin-top: 80px;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+}
+
+.film-overlay.visible {
+    opacity: 1;
+}

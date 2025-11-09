@@ -1,0 +1,93 @@
+.main-cont {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+
+}
+
+.text {
+    margin-top: 0px;
+}
+
+.image-wrapper {
+    display: flex;
+    /* gap: -10px; */
+    /* width: 235.000008441183px;
+    height: 233.00000836934316px; */
+    /* justify-content: center; */
+
+
+}
+
+.rightHeading {
+    font-family: Island Moments;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 80px;
+    color: rgba(15, 50, 85, 1);
+    max-width: 918px;
+    /* line-height: 100%;
+    letter-spacing: 0%; */
+    text-align: center;
+
+}
+
+.right-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.image-wrapper .img2,
+.image-wrapper .img3 {
+    margin-left: -140px;
+}
+
+.left-cont {
+    /* padding-left: 70px; */
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading1 {
+    font-family: Halant;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 40px;
+    text-align: center;
+    max-width: 662px;
+    max-height: 63px;
+}
+
+.heading2 {
+    font-family: Instrument Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    text-align: center;
+    max-width: 550px;
+    max-height: 145px;
+}
+
+/* .main-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+.logos {
+    position: relative;
+    margin-left: 60px;
+}
+
+.obj {
+    position: absolute;
+    /* bottom: 200px; */
+    left: 170px;
+    top: 125px;
+}
